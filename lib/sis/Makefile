@@ -23,13 +23,13 @@ $(OUTPUTFILE): loader.o queries.o
 
 .PHONY: install
 install:
-	mkdir -p $(INSTALLDIR)/dynamic
-	cp -p $(OUTPUTFILE).so $(INSTALLDIR)/dynamic
+	mkdir -p $(INSTALLDIR)
+	cp -p $(OUTPUTFILE).so $(INSTALLDIR)
 
 .PHONY: clean 
 clean:
 	for file in $(CLEANEXTS); do rm -f *.$$file; done
-	rm -f $(INSTALLDIR)/dynamic/$(OUTPUTFILE).so
+	rm -f $(INSTALLDIR)/$(OUTPUTFILE).so
 
 # Dependencies
 loader.o: loader.c types.h

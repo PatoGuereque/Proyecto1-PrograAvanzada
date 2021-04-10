@@ -35,7 +35,7 @@ o Se recomienda usar structs
   * ./app archivo_1.txt archivo_2.txt
   * ./app archivo_1.txt test.txt -h
     * Si la opción -h es provista, lo único que debe hacer es mostrar la ayuda
-  * ./app archivo_1.txt, hola.txt adios.txt -v -o salida.txt
+  * ./app archivo_1.txt hola.txt -v -o salida.txt
 
 
 ## Estructura de archivos:

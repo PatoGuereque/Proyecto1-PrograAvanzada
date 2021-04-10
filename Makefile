@@ -19,7 +19,7 @@ libs:
 
 # Build main
 $(OUTPUTFILE): src/main.c
-	$(CC) $^ -L$(LIBDIR)/dynamic $(args) -o $@.o
+	$(CC) $^ -L$(LIBDIR) $(args) -o $@.o
 
 .PHONY: clean 
 clean:
