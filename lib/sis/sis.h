@@ -3,6 +3,6 @@
 
 #include "types.h"
 
-// sis functions
+void load_data(student_t **data, int *n, char *file1, char *file2);
 
 #endif

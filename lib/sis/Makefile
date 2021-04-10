@@ -32,5 +32,5 @@ clean:
 	rm -f $(INSTALLDIR)/$(OUTPUTFILE).so
 
 # Dependencies
-loader.o: loader.c types.h
+loader.o: loader.c types.h ../logger/logger.h
 queries.o: queries.c types.h

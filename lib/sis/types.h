@@ -14,10 +14,11 @@ typedef struct {
 typedef struct {
     
     int id;
-    char *name;
-    char *major;
-    char *city;
-    char *grad_date;
+    char name[20];
+    char last_name[20];
+    char major[4];
+    char city[21];
+    char grad_date[11];
     grade_t grade;
 
 } student_t;

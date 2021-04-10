@@ -1,5 +1,6 @@
 #ifndef _LOGGER_H
 #define _LOGGER_H
+#include <stdio.h>
 
 unsigned short VERBOSE_OFF = 0;
 unsigned short VERBOSE_ON = 1;

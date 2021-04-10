@@ -41,6 +41,7 @@ int main(int argc, char **argv) {
 
         if (c == 'v') {
             set_verbose(VERBOSE_ON);
+            ilog(DEBUG, "[*] Verbose mode enabled\n");
         } else if (c == 'o') {
             out_file_name = optarg;
         } else if (c == '?') {
@@ -58,13 +59,34 @@ int main(int argc, char **argv) {
     }
 
     if (argc - optind != 2) {
-        printf("Uso: %s [BANDERAS...] <archivo1> <archivo2>\n", *argv);
-        printf("Para consultar la ayuda utiliza: %s -h\n", *argv);
+        fprintf(stderr, "Uso: %s [BANDERAS...] <archivo1> <archivo2>\n", *argv);
+        fprintf(stderr, "Para consultar la ayuda utiliza: %s -h\n", *argv);
         return 1;
     }
 
-    // argv[optind] - archivo1
-    // argv[optind + 1] - archivo2
+    student_t *students = NULL;
+    int num_students;
+    load_data(&students, &num_students, argv[optind], argv[optind + 1]);
 
+    FILE *file_out = NULL;
+    if (out_file_name) {
+        ilog(DEBUG, "[*] Opening out file %s\n", out_file_name);
+        file_out = fopen(out_file_name, "w");
+
+        if (!file_out) {
+            perror("Could not open file for output\n");
+        }
+        file_output(file_out);
+    }
+
+    // program loop
+
+    if (file_out) {
+        ilog(DEBUG, "[*] Closing out file\n");
+        fclose(file_out);
+    }
+
+    free(students);
+    ilog(DEBUG, "[*] Goodbye :)\n");
     return 0;
 }
