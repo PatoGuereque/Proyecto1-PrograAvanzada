@@ -20,6 +20,10 @@ libs:
 # Build main
 $(OUTPUTFILE): src/main.c
 	$(CC) $^ -L$(LIBDIR) $(args) -o $@.o
+	@echo
+	@echo "Success! You can now run the program with"
+	@echo "export LD_LIBRARY_PATH=./bin"
+	@echo "./Proyecto1.o data/a1.txt data/a2.txt"
 
 .PHONY: clean 
 clean:
