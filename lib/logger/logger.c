@@ -13,7 +13,7 @@ void file_output(FILE *file) {
     file_out = file;
 }
 
-void ilog(int level, const char *format, ...) {
+void ilog(const int level, const char *format, ...) {
     if(level & NORMAL || (verbose && level & DEBUG)) {
         va_list args;
         va_start(args, format);
@@ -22,7 +22,7 @@ void ilog(int level, const char *format, ...) {
     }
 }
 
-void flog(int level, const char *format, ...) {
+void flog(const int level, const char *format, ...) {
     if(level & NORMAL || (verbose && level & DEBUG)) {
         va_list args;
         if (file_out) {

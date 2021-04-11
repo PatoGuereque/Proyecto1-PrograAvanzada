@@ -1,16 +1,16 @@
 #ifndef _LOGGER_H
-#define _LOGGER_H
+#define _LOGGER_H 1
 #include <stdio.h>
 
-unsigned short VERBOSE_OFF = 0;
-unsigned short VERBOSE_ON = 1;
+#define VERBOSE_OFF 0
+#define VERBOSE_ON 1
 
-unsigned short NORMAL = 0x0001;
-unsigned short DEBUG = 0x0002;
+#define NORMAL 0x0001
+#define DEBUG 0x0002
 
 void set_verbose(const unsigned short _verbose);
 void file_output(FILE *file);
-void ilog(int level, const char *format, ...);
-void flog(int level, const char *format, ...);
+void ilog(const int level, const char *format, ...);
+void flog(const int level, const char *format, ...);
 
 #endif
