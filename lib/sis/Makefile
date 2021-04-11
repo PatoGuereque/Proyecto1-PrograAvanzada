@@ -18,7 +18,7 @@ args = -g -Wall -lm -fPIC
 all: $(OUTPUTFILE)
 
 # Build dynamic library
-$(OUTPUTFILE): loader.o queries.o
+$(OUTPUTFILE): queries.o loader.o utils.o
 	$(CC) -shared -o $@.so $^
 
 .PHONY: install
@@ -32,5 +32,6 @@ clean:
 	rm -f $(INSTALLDIR)/$(OUTPUTFILE).so
 
 # Dependencies
-loader.o: loader.c types.h ../logger/logger.h
-queries.o: queries.c types.h
+queries.o: queries.c utils.c
+loader.o: loader.c
+utils.o: utils.c

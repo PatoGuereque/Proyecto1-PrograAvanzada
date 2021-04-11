@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "types.h"
-#include "../logger/logger.h"
 
 void load_data(student_t **students, int *n, char *file1, char *file2) {
     int num_students = 0;
@@ -11,8 +11,11 @@ void load_data(student_t **students, int *n, char *file1, char *file2) {
 
     while (!feof(f1)) {
         student_t student;
-        fscanf(f1, "%d %s %s %s %s %s", &student.id, student.name, student.last_name, student.major, student.city, student.grad_date);
-        ilog(DEBUG, "[*] Loaded %d %s %s\n", student.id, student.name, student.last_name);
+        char last_name[20];
+        fscanf(f1, "%d %s %s %s %s %s", &student.id, student.name, last_name, student.major, student.city, student.grad_date);
+        strcat(student.name, " ");
+        strcat(student.name, last_name);
+        ilog(DEBUG, "[*] Loaded %d %s\n", student.id, student.name);
         *(data + num_students) = student;
         num_students++;
     }
@@ -53,4 +56,5 @@ void load_data(student_t **students, int *n, char *file1, char *file2) {
     }
 
     fclose(f2);
+    *n = num_students;
 }

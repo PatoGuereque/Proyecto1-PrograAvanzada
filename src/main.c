@@ -80,6 +80,7 @@ int main(int argc, char **argv) {
     }
 
     // program loop
+    print_students(students, num_students);
 
     if (file_out) {
         ilog(DEBUG, "[*] Closing out file\n");

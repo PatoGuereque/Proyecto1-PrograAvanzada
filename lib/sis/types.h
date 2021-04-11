@@ -1,5 +1,6 @@
 #ifndef _SIS_TYPES_H
-#define _SIS_TYPES_H
+#define _SIS_TYPES_H 1
+#include "../logger/logger.h"
 
 typedef struct {
 
@@ -15,7 +16,6 @@ typedef struct {
     
     int id;
     char name[20];
-    char last_name[20];
     char major[4];
     char city[21];
     char grad_date[11];
