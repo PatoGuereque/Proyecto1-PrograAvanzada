@@ -5,8 +5,9 @@
 #define VERBOSE_OFF 0
 #define VERBOSE_ON 1
 
-#define NORMAL 0x0001
-#define DEBUG 0x0002
+#define NORMAL (1 << 0)
+#define DEBUG (1 << 1)
+#define FILE_ONLY (1 << 2)
 
 void set_verbose(const unsigned short _verbose);
 void file_output(FILE *file);

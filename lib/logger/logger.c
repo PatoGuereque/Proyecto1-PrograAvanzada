@@ -31,8 +31,10 @@ void flog(const int level, const char *format, ...) {
             va_end(args);
         }
         
-        va_start(args, format);
-        vprintf(format, args);
-        va_end(args);
+        if ((level & FILE_ONLY) == 0) {
+            va_start(args, format);
+            vprintf(format, args);
+            va_end(args);   
+        }
     }
 }
