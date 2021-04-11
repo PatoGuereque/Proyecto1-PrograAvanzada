@@ -5,11 +5,17 @@
 
 void load_data(student_t **students, int *n, char *file1, char *file2) {
     int num_students = 0;
-    student_t *data = *students = malloc(10*sizeof(student_t));
+    int blocks = 5;
+    student_t *data = *students = malloc(blocks*sizeof(student_t));
 
     FILE *f1 = fopen(file1, "r");
 
     while (!feof(f1)) {
+        if (num_students % blocks == 0 && num_students != 0) {
+            ilog(DEBUG, "[*] Allocating an additional %d blocks, capacity is now at %d\n", blocks, (blocks + num_students));
+            data = realloc(data, (num_students + blocks) * sizeof(student_t));
+        }
+
         student_t student;
         char last_name[20];
         fscanf(f1, "%d %s %s %s %s %s", &student.id, student.name, last_name, student.major, student.city, student.grad_date);
