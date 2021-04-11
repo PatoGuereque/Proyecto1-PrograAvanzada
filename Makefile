@@ -23,7 +23,7 @@ $(OUTPUTFILE): src/main.c
 	@echo
 	@echo "Success! You can now run the program with"
 	@echo "export LD_LIBRARY_PATH=./bin"
-	@echo "./Proyecto1.o data/a1.txt data/a2.txt"
+	@echo "./Proyecto1.o data/a1.txt data/a2.txt -o log.txt"
 
 .PHONY: clean 
 clean:

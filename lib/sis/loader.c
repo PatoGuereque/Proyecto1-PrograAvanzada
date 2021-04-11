@@ -45,6 +45,7 @@ void load_data(student_t **students, int *n, char *file1, char *file2) {
         }
 
         fscanf(f2, "%d %d %d %d", &grades->grade1, &grades->grade2, &grades->grade3, &grades->grade4);
+        grades->average = (grades->grade1 + grades->grade2 + grades->grade3 + grades->grade4) / 4.0;
         ilog(DEBUG, "[*] Loaded grades for student %d\n", id);
         num_grades++;
     }

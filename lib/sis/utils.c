@@ -2,6 +2,23 @@
 #include <stdio.h>
 #include "types.h"
 
+student_t* get_student_stdin(student_t *students, int n) {
+    int id;
+    ilog(NORMAL, "Por favor ingrese el id del estudiante\n> ");
+    scanf("%d", &id);
+    flog(NORMAL | FILE_ONLY, "%d\n", id);
+
+    student_t *ptr = students;
+    for (int i = 0; i < n; i++, ptr++) {
+        if (ptr->id == id) {
+            return ptr;
+        }
+    }
+
+    flog(NORMAL, "Número de estudiante incorrect!\n\n");
+    return NULL;
+}
+
 void ilog_header(const int level) {
     ilog(level, "id   Nombre               Carrera Ciudad Origen        Est. Grad.   A   B   C   D\n");
 }

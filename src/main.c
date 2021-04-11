@@ -80,7 +80,20 @@ int main(int argc, char **argv) {
     }
 
     // program loop
-    print_students(students, num_students);
+    int opt;
+    while (opt != 3) {
+        printf("1. Desplegar todos los estudiantes\n");
+        printf("2. Hacer una consulta\n");
+        printf("3. Salir\n");
+        printf("Por favor ingrese la opción\n> ");
+        scanf("%d", &opt);
+
+        if (opt == 1) {
+            print_students(students, num_students);
+        } else if (opt == 2) {
+            handle_query_input(students, num_students);
+        }
+    }
 
     if (file_out) {
         ilog(DEBUG, "[*] Closing out file\n");

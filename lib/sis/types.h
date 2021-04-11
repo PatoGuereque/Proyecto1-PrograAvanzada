@@ -9,6 +9,7 @@ typedef struct {
     int grade2;
     int grade3;
     int grade4;
+    double average;
 
 } grade_t;
 
