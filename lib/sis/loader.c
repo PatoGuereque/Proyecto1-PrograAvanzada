@@ -6,7 +6,7 @@
 void load_data(student_t **students, int *n, char *file1, char *file2) {
     int num_students = 0;
     int blocks = 5;
-    student_t *data = *students = malloc(blocks*sizeof(student_t));
+    student_t *data = malloc(blocks*sizeof(student_t));
 
     FILE *f1 = fopen(file1, "r");
 
@@ -64,4 +64,5 @@ void load_data(student_t **students, int *n, char *file1, char *file2) {
 
     fclose(f2);
     *n = num_students;
+    *students = data;
 }
