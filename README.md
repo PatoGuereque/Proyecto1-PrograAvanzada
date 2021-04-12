@@ -18,10 +18,14 @@ o Se recomienda usar structs
 - Listado que queries
   * “Kardex <estudiante_id>”
   * “Fecha_estimada_graduacion <estudiante_id>”
+  * “Nombre_alumnos <nombre_carrera> <ciudad_origen>”
+  * “Nombre_alumnos <nombre_carrera>”
+  * “Nombre_alumnos *”
+  * “Nombre_alumnos <operador> <numero>”: Debe regresar la lista de alumnos cuyo promedio cumpla con la condición. Operador: <, >, ==, !=
   * “Numero_alumnos <nombre_carrera> <ciudad_origen>”
   * “Numero_alumnos <nombre_carrera>”
   * “Numero_alumnos *”
-  * “Nombre_alumnos <operador> <numero>”: Debe regresar la lista de alumnos cuyo promedio cumpla con la condición. Operador: <, >, ==, !=
+  * “Numero_alumnos <operador> <numero>”: Debe regresar la lista de alumnos cuyo promedio cumpla con la condición. Operador: <, >, ==, !=
 
 - Si el usuario ingresa un query invalido debes infórmale
 - Tu programa debe tener una opción para mostrar toda la información de todos los estudiantes
