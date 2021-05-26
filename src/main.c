@@ -1,3 +1,17 @@
+/*
+ * @author Pato Guereque
+ *
+ * Gives the user options to get data from a small SIS (Student Information System)
+ * The data is retrieved from text files which contains raw data from the students 
+ * There are different operations available while running the program.
+ *
+ * OPTIONS:
+ *      -h                  Shows program usage
+ *      -v                  Verbose mode (more information during execution)
+ *      -o <fileName>       Logs queries in the fileName
+ *
+ */
+
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
